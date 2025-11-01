@@ -34,3 +34,26 @@ curl http://localhost:8787/fixed
 ```
 
 This will succeed because the token is not forwarded to the upstream location.
+
+## Testing against node js
+
+The equivalent functionality is also in `./node.js`.
+
+
+To run with follow redirects using the default node:
+```bash
+node ./node.js default
+200
+```
+
+A manual implementation of the correct behaviour:
+```bash
+node ./node.js fixed
+200
+```
+
+A manual implementation of the incorrect behaviour that cloudflare workers use:
+```bash
+node ./node.js fixed
+200
+```
